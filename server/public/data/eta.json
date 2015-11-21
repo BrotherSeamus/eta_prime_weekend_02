@@ -1,5 +1,4 @@
-{
-    "eta": [
+[
         {
             "firstName": "Adia",
             "lastName": "Alderson",
@@ -477,7 +476,7 @@
                 "Mock Duck With Rice From Quang"
             ],
             "hotLineBline": true,
-            "favouriteMovies": [
+            "favoriteMovies": [
                 {
                     "movieName": "Wings Of Desire",
                     "releaseYear": 1987
@@ -493,4 +492,3 @@
             ]
         }
     ]
-}
