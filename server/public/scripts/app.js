@@ -1,7 +1,7 @@
 $(function () {
 
 	var count = 0
-
+	/*variables here store the three templates for Handlebars*/
 	var templatePrevious = Handlebars.compile($('#previous').html());
 	var templateCurrent = Handlebars.compile($('#current').html());
 	var templateNext = Handlebars.compile($('#next').html());
@@ -10,10 +10,15 @@ $(function () {
 		$.ajax({
 			url:"/data/eta.json"
 		}).done(function(array){
-			$('.previous, .current, .next').empty();
-			$('.previous').append(templatePrevious(array[count-1]));
-			$('.next').append(templateNext(array[count+1]));
-			$('.current').append(templateCurrent(array[count]));
+			$('.previous').fadeOut(500, function(){
+				$(this).html(templatePrevious(array[count-1]));
+			}).fadeIn(500);
+			$('.next').fadeOut(500, function(){
+				$(this).html(templateNext(array[count+1]));
+			}).fadeIn(500);
+			$('.current').fadeOut(500, function(){
+				$(this).html(templateCurrent(array[count]));
+			}).fadeIn(500);
 		});
 	};
 	
@@ -23,19 +28,30 @@ $(function () {
 	$('.previous').on('click', function() {
 		count--;
 		if (count<0){
-			alert("No, bad, go the other way!");
+			count = 20;
+			render();
 		}else{
 		render();
-	}
-		
-	})	
+		};
+	});	
 
 	$('.next').on('click', function() {
 		count++;
 		if (count==21) {
-			alert("No, bad, go the other way!");
+			count=0;
+			render();
 		}else{
 			render();
-		}
-	})	
+		};
+	});	
+
+	var slideShow = setInterval(function(){
+		count++;
+		if (count==21) {
+			count=0;
+			render();
+		}else{
+			render();
+		};
+	}, 10000)
 })

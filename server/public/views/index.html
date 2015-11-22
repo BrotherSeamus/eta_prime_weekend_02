@@ -13,25 +13,25 @@
             <h1>People, Data, and Other Crap</h1>
         </header>
         <main id="favorites">
-            <div class="previous">
-            </div>
-            <div class="current">
-            </div>
-            <div class="next">
-            </div>
+            <aside class="previous">
+            </aside>
+            <section class="current">
+            </section>
+            <aside class="next">
+            </aside>
 
             <script id="previous" type="text/x-handlebars-template">
-                    <p>{{this.firstName}} {{this.lastName}}<p>
+                    <h3>{{this.firstName}} {{this.lastName}}</h3>
                     <p>Previous</p>
             </script>
             <script id="current" type="text/x-handlebars-template">
-                    <p>{{this.firstName}} {{this.lastName}}</p>
+                    <h2>{{this.firstName}} {{this.lastName}}</h2>
                     {{#each this.favoriteMovies}}
                     <span>{{this.movieName}}</span> 
                     {{/each}}          
             </script>
             <script id="next" type="text/x-handlebars-template">
-                    <p>{{this.firstName}} {{this.lastName}}</p>
+                    <h3>{{this.firstName}} {{this.lastName}}</h3>
                     <p>Next</p>
             </script>
         </main>
