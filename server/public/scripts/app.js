@@ -22,6 +22,16 @@ $(function () {
 		});
 	};
 
+	function advance (){
+		count++;
+		if (count==21) {
+			count=0;
+			render();
+		}else{
+			render();
+		};
+	};
+
 	render();
 
 	$('.previous').on('click', function() {
@@ -34,43 +44,19 @@ $(function () {
 		};
 		clearInterval(slideShow);
 		slideShow = setInterval(function(){
-			count++;
-			if (count==21) {
-				count=0;
-				render();
-			}else{
-				render();
-			};
+			advance();
 		}, 10000)
 	});	
 
 	$('.next').on('click', function() {
-		count++;
-		if (count==21) {
-			count=0;
-			render();
-		}else{
-			render();
-		};
+		advance();
 		clearInterval(slideShow);
 		slideShow = setInterval(function(){
-			count++;
-			if (count==21) {
-				count=0;
-				render();
-			}else{
-				render();
-			};
+			advance();
 		}, 10000)
 	});	
 
 	var slideShow = setInterval(function(){
-		count++;
-		if (count==21) {
-			count=0;
-			render();
-		}else{
-			render();
-		};
+		advance();
 	}, 10000)
 })
