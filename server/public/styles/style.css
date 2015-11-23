@@ -51,16 +51,16 @@ table {
 
 body {
 	padding: 40px 60px;
-	background-color: #008000;
+	background-color: #2952a3;
 }
 header {
-	background-color: #8c8c8c;
+	background-color: black;
 	padding: 10px 10px;
 	border-radius: 10px 10px 0 0;
 	border-bottom: 5px groove #33adff;
 }
 main {
-	background-color: #f2f2f2;
+	background-color: #99bbff;
 	text-align: center;
 	position: relative;
 	padding: 70px 20px;
@@ -71,41 +71,50 @@ h1 {
 	font-weight: bold;
 	color: white;
 }
-.previous, .next, .current {
+div {
 	display: inline-block;
-	padding: 5px 10px;
+}
+.previous, .next, .current {
+	display: inline-block !important;
 	text-align: center;
 	border-radius: 20px;
 }
 .previous {
+	color:white;
 	position: absolute;
 	left: 10px;
 	padding: 20px;
-	border: 2px solid gray;
-	height: 28px
+	border: 3px outset #99b3ff;
+	height: 28px;
+	background-color: #999999;
 }
 .next {
+	color: white;
 	position: absolute;
 	right: 10px;
 	padding: 20px;
-	border: 2px solid gray;
-	height: 28px
+	border: 3px outset #99b3ff;
+	height: 28px;
+	background-color: #999999;
 }
 .current {
 	padding: 20px;
+	width: 60%;
 }
 h2 {
 	font-weight: bold;
 	font-size: 20px;
 	margin: 5px auto 10px auto;
-	border: 3px ridge #99b3ff;
-	width: 50%;
-	padding: 4px 0;
-	border-radius: 7px
+	border: 3px inset #99b3ff;
+	padding: 4px;
+	border-radius: 7px;
+	background-color: #ffdab3;
+	display: inline-block;
 }
 span {
-	border: 3px outset #99b3ff;
+	border: 3px inset #99b3ff;
 	padding: 3px;
 	border-radius: 7px;
+	background-color: white;
 }
 

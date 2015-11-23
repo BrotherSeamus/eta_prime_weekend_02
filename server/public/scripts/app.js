@@ -21,9 +21,8 @@ $(function () {
 			}).fadeIn(500);
 		});
 	};
-	
-	render();
 
+	render();
 
 	$('.previous').on('click', function() {
 		count--;
@@ -33,6 +32,16 @@ $(function () {
 		}else{
 		render();
 		};
+		clearInterval(slideShow);
+		slideShow = setInterval(function(){
+			count++;
+			if (count==21) {
+				count=0;
+				render();
+			}else{
+				render();
+			};
+		}, 10000)
 	});	
 
 	$('.next').on('click', function() {
@@ -43,6 +52,16 @@ $(function () {
 		}else{
 			render();
 		};
+		clearInterval(slideShow);
+		slideShow = setInterval(function(){
+			count++;
+			if (count==21) {
+				count=0;
+				render();
+			}else{
+				render();
+			};
+		}, 10000)
 	});	
 
 	var slideShow = setInterval(function(){
